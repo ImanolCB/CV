@@ -1,0 +1,425 @@
+:root {
+  /* Variables de los colores que se pueden emplear */
+  --blue1: rgb(176, 255, 255);
+  --blue2: rgb(86, 241, 241);
+  --blue3: rgb(0, 204, 204);
+  --blue4: rgb(111, 209, 255);
+  --blue5: rgb(34, 185, 255);
+  --blue6: rgb(0, 132, 194);
+
+  --red1: rgb(255, 207, 207);
+  --red2: rgb(255, 178, 178);
+  --red3: rgb(255, 146, 146);
+  --red4: rgb(255, 100, 100);
+  --red5: rgb(255, 10, 10);
+  --red6: rgb(165, 0, 0);
+
+  --green1: rgb(207, 255, 215);
+  --green2: rgb(168, 255, 181);
+  --green3: rgb(99, 255, 141);
+  --green4: rgb(62, 255, 104);
+  --green5: rgb(0, 184, 9);
+  --green6: rgb(0, 143, 10);
+
+  --purple1: rgb(234, 215, 255);
+  --purple2: rgb(212, 179, 255);
+  --purple3: rgb(184, 112, 255);
+  --purple4: rgb(154, 76, 255);
+  --purple5: rgb(97, 0, 189);
+  --purple6: rgb(86, 48, 143);
+
+  --pink1: rgb(255, 207, 255);
+  --pink2: rgb(255, 178, 255);
+  --pink3: rgb(255, 146, 255);
+  --pink4: rgb(255, 100, 255);
+  --pink5: rgb(255, 10, 255);
+  --pink6: rgb(165, 0, 165);
+
+  --yellow1: rgb(255, 255, 208);
+  --yellow2: rgb(255, 255, 178);
+  --yellow3: rgb(255, 255, 146);
+  --yellow4: rgb(255, 255, 100);
+  --yellow5: rgb(255, 255, 10);
+  --yellow6: rgb(165, 165, 0);
+
+  --black1: rgb(0, 0, 0);
+  --black2: rgb(10, 10, 10);
+  --black3: rgb(36, 36, 36);
+  --black4: rgb(80, 80, 80);
+  --black5: rgb(126, 126, 126);
+  --blackt1: rgba(0, 0, 0, 0.75);
+  --blackt2: rgba(0, 0, 0, 0.5);
+  --blackt3: rgba(0, 0, 0, 0.25);
+
+  --white1: rgb(255, 255, 255);
+  --white2: rgb(240, 240, 240);
+  --white3: rgb(235, 250, 255);
+  --white4: rgb(255, 245, 245);
+  --white5: rgb(245, 255, 248);
+  --whitet1: rgba(255, 255, 255, 0.75);
+  --whitet2: rgba(255, 255, 255, 0.5);
+  --whitet3: rgba(255, 255, 255, 0.25);
+
+  /* Poner la fuente de letra que se desea copiando de google fonts   -->   https://fonts.google.com/ */
+  --fuente1: "Comfortaa", cursive;
+  --fuente2: "";
+
+  /* Tamaños de letras */
+
+  --fs1: 10px;
+  --fs2: 14px;
+  --fs25: 16px;
+  --fs3: 18px;
+  --fs4: 22px;
+  --fs5: 28px;
+  --fs6: 34px;
+  --fs7: 45px;
+  --fs8: 55px;
+  --fs9: 65px;
+
+  /* Fondos con gradiantes ' background-image: ' --> https://webgradients.com/  */
+
+  --bg1: linear-gradient(90deg, rgba(25, 25, 25) 0%,rgba(25, 25, 25, 0.5) 50%, rgba(25, 25, 25) 100%);
+  --bg2: linear-gradient(to top, #fad0c4 0%, #ffd1ffa8 100%);
+  --bg3: linear-gradient(to top, #fbc2eb 0%, #a6c0ee94 100%);
+  --bg4: linear-gradient(120deg, #84fab0 0%, #8fd2f494 100%);
+  --bg5: linear-gradient(120deg, #a1c4fd 0%, #c2e9fba2 100%);
+  --bg6: linear-gradient(120deg, #fccb90 0%, #d57eeb8f 100%);
+  --bg7: linear-gradient(to top, #30cfd0 0%, #33086788 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: var(--bg1);
+  background-size: cover;
+  background-position: center;
+  color: var(--black2);
+  font-family: var(--fuente1);
+}
+
+hr {
+  margin-bottom: 20px;
+}
+
+h1,
+h3 {
+  margin-bottom: 10px;
+  font-size: var(--fs4);
+}
+
+h2 {
+  padding: 5px 0;
+  font-size: var(--fs3);
+}
+
+a {
+  color: var(--white2);
+  text-decoration: none;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+
+  grid-template-areas:
+    "sidebar    header    header"
+    "sidebar contenido contenido"
+    "sidebar  contenido  contenido";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar {
+  background: var(--white1);
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.contenedor .header {
+  background: #0c998d;
+  color: #000;
+  font-size: 44px;
+  grid-area: header;
+  box-shadow: 0 0 10px #686868;
+}
+
+.contenedor .header span{
+  color: var(--white2);
+  
+}
+
+.contenedor .header p {
+  animation: escritura 10s infinite;
+  border-right: 5px solid #0c998d;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0%;
+}
+
+@keyframes escritura {
+  to {
+    width: 100%;
+  }
+}
+
+
+.contenedor .contenido {
+  grid-area: contenido;
+  box-shadow: 0 0 10px #686868;
+}
+
+.contenedor .sidebar {
+  min-height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: left;
+  color: #fff;
+  background: #0c998d;
+  box-shadow: 0 0 10px #686868;
+  grid-area: sidebar;
+}
+
+.contacto {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.contacto-redes {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.contacto-redes-link {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+}
+
+.contacto-redes-link > span {
+  padding: 0px 8px;
+}
+
+.aptitudes > ul {
+  margin-left: 40px;
+  padding-bottom: 10px;
+  list-style: circle;
+  text-decoration-line: none;
+}
+
+.aptitudes > ul > li {
+  padding: 5px 0;
+}
+
+.competencias-lista {
+  display: flex;
+  padding-bottom: 10px;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.competencias-columna > ul {
+  list-style: none;
+}
+
+.competencias-columna > ul > li {
+  padding: 5px 0;
+}
+
+.competencias-columna {
+  display: flex;
+  flex-direction: column;
+}
+
+.idiomas-opc {
+  display: flex;
+  padding: 10px 0;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.idioma-concreto-es,
+.idioma-concreto-en {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.idioma-concreto-es p,
+.idioma-concreto-en p {
+  width: 80px;
+}
+
+.idioma-concreto-es hr {
+  justify-content: left;
+  padding-bottom: 10px;
+  width: 64%;
+  background-color: white;
+}
+.idioma-concreto-en hr {
+  justify-content: left;
+  padding-bottom: 10px;
+  width: 37%;
+  background-color: white;
+}
+
+.lateral {
+  background-color: #06443f;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+
+.profile {
+  text-align: center;
+  transition: 0.7s ease all;
+}
+
+.profile-img {
+  width: 200px;
+  height: 220px;
+  margin: 10px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  border-bottom: #0a032eb4 solid 2px;
+  box-shadow: 0px 0 40px #fdfdfddb;
+  transition: 1s all;
+}
+
+@keyframes perfil {
+  0%,
+  100% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+
+  20% {
+    border-radius: 56% 44% 42% 58% / 41% 57% 43% 59%;
+  }
+
+  40% {
+    border-radius: 58% 42% 49% 51% / 55% 50% 50% 45%;
+  }
+
+  60% {
+    border-radius: 48% 52% 67% 33% / 41% 51% 49% 59%;
+  }
+
+  80% {
+    border-radius: 56% 44% 70% 30% / 54% 67% 33% 46%;
+  }
+}
+
+.profile-img:hover {
+  transform: perspective(200px) translateZ(10px);
+  box-shadow: 0px 0 40px #161616db;
+  animation: perfil infinite 12s;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.titulo h3 {
+  font-size: var(--fs3);
+}
+
+.experiencia {
+  padding: 10px 0;
+  margin-left: 10px;
+}
+
+.experiencia h3 {
+  font-size: var(--fs3);
+}
+
+.titulo-centro {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.centro {
+  text-align: end;
+}
+
+.experiencia-empresa {
+  width: 100%;
+  color: #0c998d;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.fecha {
+  width: 200px;
+  color: #0c998d;
+  font-weight: bold;
+}
+
+.sobreMi {
+  transition: 0.5s all;
+  transition-delay: 0.3s;
+}
+
+.sobreMi:hover {
+  padding: 15px 10px;
+  border-radius: 10px;
+  color: var(--white2);
+  box-shadow: 0 0 20px #000;
+  background-color: #05322ecc;
+  transform: perspective(400px) translateZ(25px);
+}
+
+.formacion {
+  transition: 0.5s all;
+  transition-delay: 0.3s;
+}
+
+.formacion:hover {
+  padding: 15px 10px;
+  border-radius: 10px;
+  color: var(--white2);
+  box-shadow: 0 0 20px #000;
+  background-color: #05322ecc;
+  transform: perspective(400px) translateZ(25px);
+  margin: 20px 0;
+}
+
+.experienciaLaboral {
+  padding: 20px 0;
+  transition: 0.5s all;
+  transition-delay: 0.3s;
+}
+
+.experienciaLaboral:hover {
+  padding: 15px 10px;
+  border-radius: 10px;
+  color: var(--white2);
+  box-shadow: 0 0 20px #000;
+  background-color: #05322ecc;
+  transform: perspective(400px) translateZ(25px);
+}
+
+@media screen and (max-width: 768px) {
+  .contenedor {
+    grid-template-areas:
+      "header    header    header"
+      "contenido contenido contenido"
+      "sidebar   sidebar   sidebar"
+      "widget-1  widget-1  widget-2"
+      "footer    footer    footer";
+  }
+}
