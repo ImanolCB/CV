@@ -6,6 +6,8 @@
   --blue4: rgb(111, 209, 255);
   --blue5: rgb(34, 185, 255);
   --blue6: rgb(0, 132, 194);
+  --bgSecondary: linear-gradient(180deg, #d4dbe4 0%, #c3d9ec 66%);
+  /* --bgSecondary: rgb(164, 219, 255); */
 
   --red1: rgb(255, 207, 207);
   --red2: rgb(255, 178, 178);
@@ -79,7 +81,7 @@
 
   /* Fondos con gradiantes ' background-image: ' --> https://webgradients.com/  */
 
-  --bg1: linear-gradient(90deg, rgba(25, 25, 25) 0%,rgba(25, 25, 25, 0.5) 50%, rgba(25, 25, 25) 100%);
+  --bg1: linear-gradient(90deg, #405464c4 0%,#ffffff 50%, #405464c4 100%);
   --bg2: linear-gradient(to top, #fad0c4 0%, #ffd1ffa8 100%);
   --bg3: linear-gradient(to top, #fbc2eb 0%, #a6c0ee94 100%);
   --bg4: linear-gradient(120deg, #84fab0 0%, #8fd2f494 100%);
@@ -105,10 +107,14 @@ hr {
   margin-bottom: 20px;
 }
 
-h1,
+h1{
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
 h3 {
   margin-bottom: 10px;
-  font-size: var(--fs4);
 }
 
 h2 {
@@ -117,7 +123,7 @@ h2 {
 }
 
 a {
-  color: var(--white2);
+  color: var(--black3);
   text-decoration: none;
 }
 
@@ -150,7 +156,7 @@ a {
 }
 
 .contenedor .header {
-  background: #0c998d;
+  background: var(--bgSecondary);
   color: #000;
   font-size: 44px;
   grid-area: header;
@@ -158,13 +164,12 @@ a {
 }
 
 .contenedor .header span{
-  color: var(--white2);
+  color: var(--black3);
   
 }
 
 .contenedor .header p {
   animation: escritura 10s infinite;
-  border-right: 5px solid #0c998d;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -182,8 +187,8 @@ a {
   justify-content: space-evenly;
   flex-direction: column;
   text-align: left;
-  color: #fff;
-  background: #0c998d;
+  color: var(--black3);
+  background: var(--bgSecondary);
   box-shadow: 0 0 10px #686868;
   grid-area: sidebar;
 }
@@ -197,12 +202,13 @@ a {
 .contacto-redes {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
 }
 
 .contacto-redes-link {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin: 5px 0;
 }
 
@@ -274,7 +280,7 @@ a {
 }
 
 .lateral {
-  background-color: #06443f;
+  border-bottom: 1px solid #0c998d;
   border-radius: 5px;
   padding-left: 15px;
 }
@@ -285,8 +291,8 @@ a {
 }
 
 .profile-img {
-  width: 160px;
-  height: 160px;
+  width: 14rem;
+  height: 14rem;
   margin: 10px;
   object-fit: cover;
   object-position: center;
@@ -332,7 +338,8 @@ a {
 }
 
 .titulo h3 {
-  font-size: var(--fs3);
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .experiencia {
@@ -340,12 +347,19 @@ a {
   margin-left: 10px;
 }
 
+.experiencia p{
+  padding: 4px 0;
+}
+
 .experiencia h3 {
   font-size: var(--fs3);
 }
 
 .titulo-centro {
-  width: 70%;
+  margin-left: 10%;
+  width: 50%;
+  padding: 10px 0;
+  font-size: small;
   display: flex;
   flex-direction: column;
 }
@@ -356,15 +370,18 @@ a {
 
 .experiencia-empresa {
   width: 100%;
-  color: #0c998d;
+  font-weight: 600;
+  color: #405464;
   text-align: right;
   margin-top: 20px;
 }
 
 .fecha {
-  width: 200px;
-  color: #0c998d;
-  font-weight: bold;
+  width: 40%;
+  font-weight: 600;
+  color: #405464;
+  font-size: .85rem;
+  margin: auto;
 }
 
 .sobreMi {
@@ -377,7 +394,7 @@ a {
 .sobreMi:hover {
   border-radius: 10px;
   color: var(--black1);
-  box-shadow: 0 0 20px #727272;
+  box-shadow: 0 0 20px #cacaca;
   background-color: #77777700;
   /* transform: perspective(200px) translateZ(5px); */
 }
@@ -392,7 +409,7 @@ a {
 .formacion:hover {
   border-radius: 10px;
   color: var(--black1);
-  box-shadow: 0 0 20px #727272;
+  box-shadow: 0 0 20px #cacaca;
   background-color: #77777700;
   /* transform: perspective(200px) translateZ(5px); */
 }
@@ -407,7 +424,7 @@ a {
 .experienciaLaboral:hover {
   border-radius: 10px;
   color: var(--black1);
-  box-shadow: 0 0 20px #727272;
+  box-shadow: 0 0 20px #cacaca;
   background-color: #77777700;
   /* transform: perspective(100px) translateZ(5px); */
 }
